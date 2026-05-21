@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Drive | Veículos Multimarcas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header" id="site-header">
+        <div class="nav-container">
+            <a class="logo" href="#/">
+                Atlas <span>Drive</span>
+            </a>
+            <nav class="nav" aria-label="principal">
+                <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+                    Menu
+                </button>
+                <div class="nav-links" id="nav-links">
+                    <a href="#/" data-link="home">Início</a>
+                    <a href="#/estoque" data-link="inventory">Estoque</a>
+                    <a href="#/contato" data-link="contact">Contato</a>
+                </div>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema" type="button">
+                <span class="theme-toggle-text">Tema</span>
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="app">
+        <section id="view-home" class="view active">
+            <section class="hero">
+                <div class="hero-content">
+                    <p class="eyebrow">Sua próxima conquista começa aqui</p>
+                    <h1>Veículos selecionados, experiência <span class="hero-accent">premium</span>.</h1>
+                    <div class="hero-actions">
+                        <a class="btn-primary" href="#/estoque">Explorar estoque</a>
+                        <a class="btn-ghost" href="#/contato">Fale com a equipe</a>
+                    </div>
+                </div>
+                <div class="scroll-indicator" aria-hidden="true">
+                    <div class="mouse">
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="search-panel" aria-label="Buscar veículos">
+                <form id="home-search" class="search-grid">
+                    <div class="form-group">
+                        <label for="home-brand">Marca</label>
+                        <div class="search-select">
+                            <input class="form-control" id="home-brand" placeholder="Todas" autocomplete="off">
+                            <div class="dropdown-list" id="home-brand-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="home-model">Modelo</label>
+                        <input class="form-control" id="home-model" placeholder="Ex: Vortex LX" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="home-year">Ano mínimo</label>
+                        <div class="search-select">
+                            <input class="form-control" id="home-year" placeholder="Todos" autocomplete="off">
+                            <div class="dropdown-list" id="home-year-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <div class="form-group price-group">
+                        <label for="home-price-min">Valor</label>
+                        <div class="price-inputs">
+                            <div class="price-input">
+                                <span class="price-prefix">R$</span>
+                                <input class="price-field" id="home-price-min" inputmode="numeric" placeholder="Minimo"
+                                    autocomplete="off">
+                            </div>
+                            <span class="price-separator">ate</span>
+                            <div class="price-input">
+                                <span class="price-prefix">R$</span>
+                                <input class="price-field" id="home-price-max" inputmode="numeric" placeholder="Maximo"
+                                    autocomplete="off" aria-label="Valor maximo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="home-fuel">Combustível</label>
+                        <div class="search-select">
+                            <input class="form-control" id="home-fuel" placeholder="Todos" autocomplete="off">
+                            <div class="dropdown-list" id="home-fuel-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="home-transmission">Câmbio</label>
+                        <div class="search-select">
+                            <input class="form-control" id="home-transmission" placeholder="Todos" autocomplete="off">
+                            <div class="dropdown-list" id="home-transmission-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" type="submit">Buscar veículos</button>
+                </form>
+            </section>
+
+            <section class="section" aria-label="Veículos em destaque">
+                <div class="vehicles-grid" id="featured-grid"></div>
+                <div class="section-cta">
+                    <a class="btn-secondary" href="#/estoque">Ver todo o estoque</a>
+                </div>
+            </section>
+
+            <section class="section institutional">
+                <div class="institutional-text">
+                    <h2>Uma loja multimarcas criada para surpreender.</h2>
+                    <p>Somos um showroom modelo com atendimento consultivo, processos transparentes e experiência
+                        premium do primeiro contato ao pós-venda.</p>
+                    <p>Seleção rigorosa, laudos completos e opções de financiamento pensadas para facilitar sua escolha.
+                    </p>
+                </div>
+                <div class="institutional-media">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&q=80&w=1200"
+                        alt="Showroom automotivo moderno">
+                </div>
+            </section>
+
+            <section class="section differentials">
+                <div class="section-header">
+                    <h2>Diferenciais da experiência Atlas Drive</h2>
+                    <p>Estrutura premium com foco em confiança e segurança.</p>
+                </div>
+                <div class="diff-grid">
+                    <article class="diff-card">
+                        <h3>Financiamento facilitado</h3>
+                        <p>Simulação rápida com bancos parceiros e aprovação ágil.</p>
+                    </article>
+                    <article class="diff-card">
+                        <h3>Veículos revisados</h3>
+                        <p>Checklist com mais de 120 itens e preparação completa.</p>
+                    </article>
+                    <article class="diff-card">
+                        <h3>Procedência garantida</h3>
+                        <p>Laudos cautelares e histórico transparente para sua segurança.</p>
+                    </article>
+                    <article class="diff-card">
+                        <h3>Atendimento especializado</h3>
+                        <p>Consultores prontos para orientar sua melhor escolha.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section contact" id="contato">
+                <div class="contact-card">
+                    <div>
+                        <h2>Entre em contato e agende sua visita.</h2>
+                        <p>Estamos prontos para apresentar o veículo ideal com a melhor experiência.</p>
+                        <div class="contact-info">
+                            <span>Av. Exemplo Empresarial, 1000 - Cidade Modelo</span>
+                            <span>(11) 90000-0000</span>
+                            <span>contato@atlasdrive.exemplo.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-actions">
+                        <a class="btn-whatsapp" href="https://wa.me/5511900000000" target="_blank" rel="noopener">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                            WhatsApp
+                        </a>
+                        <button class="btn-secondary" type="button">Simular financiamento</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="view-inventory" class="view">
+            <div class="page-hero">
+                <h1>Estoque multimarcas</h1>
+                <p>Modelos selecionados para quem busca sofisticação e segurança.</p>
+            </div>
+
+            <div class="listing-layout">
+                <aside class="filters-panel" aria-label="Filtros do estoque">
+                    <h3>Filtros avançados</h3>
+                    <div class="form-group">
+                        <label for="filter-model">Modelo</label>
+                        <input class="form-control" id="filter-model" placeholder="Ex: Orion XE" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-brand">Marca</label>
+                        <div class="search-select">
+                            <input class="form-control" id="filter-brand" placeholder="Todas" autocomplete="off">
+                            <div class="dropdown-list" id="filter-brand-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-year">Ano mínimo</label>
+                        <div class="search-select">
+                            <input class="form-control" id="filter-year" placeholder="Todos" autocomplete="off">
+                            <div class="dropdown-list" id="filter-year-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-price">Faixa de preço</label>
+                        <div class="search-select">
+                            <input class="form-control" id="filter-price" placeholder="Todas as faixas"
+                                autocomplete="off">
+                            <div class="dropdown-list" id="filter-price-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-fuel">Combustível</label>
+                        <div class="search-select">
+                            <input class="form-control" id="filter-fuel" placeholder="Todos" autocomplete="off">
+                            <div class="dropdown-list" id="filter-fuel-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-transmission">Câmbio</label>
+                        <div class="search-select">
+                            <input class="form-control" id="filter-transmission" placeholder="Todos" autocomplete="off">
+                            <div class="dropdown-list" id="filter-transmission-list" role="listbox"></div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="apply-filters" type="button">Aplicar filtros</button>
+                </aside>
+
+                <div class="listing-content">
+                    <div class="listing-header">
+                        <p id="results-count">0 resultados</p>
+                        <button class="btn-ghost" id="clear-filters" type="button">Limpar filtros</button>
+                    </div>
+                    <div class="vehicles-grid" id="inventory-grid"></div>
+                    <div class="listing-footer">
+                        <button class="btn-secondary" id="load-more" type="button">Carregar mais</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-detail" class="view">
+            <div class="detail-layout">
+                <div class="detail-main" id="detail-main-content"></div>
+                <aside class="detail-sidebar" id="detail-sidebar-content" aria-label="Resumo do veiculo"></aside>
+            </div>
+
+            <section class="section related">
+                <div class="section-header">
+                    <h2>Veículos relacionados</h2>
+                    <p>Outras opções alinhadas ao seu estilo.</p>
+                </div>
+                <div class="vehicles-grid compact" id="related-grid"></div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <a class="logo" href="#/">Atlas <span>Drive</span></a>
+                <p>Site modelo profissional para loja multimarcas. Conteúdo fictício e adaptável.</p>
+            </div>
+            <div>
+                <h4>Contato</h4>
+                <ul>
+                    <li>Av. Exemplo Empresarial, 1000</li>
+                    <li>Distrito Central, Cidade Modelo</li>
+                    <li>(11) 90000-0000</li>
+                    <li>contato@atlasdrive.exemplo.com</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Links rápidos</h4>
+                <ul>
+                    <li><a href="#/">Página inicial</a></li>
+                    <li><a href="#/estoque">Estoque completo</a></li>
+                    <li><a href="#/contato">Agendar visita</a></li>
+                    <li><a href="#/estoque">Simular financiamento</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Redes sociais</h4>
+                <div class="footer-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2026 Atlas Drive. Modelo profissional fictício para revendas automotivas.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+
+</html>
